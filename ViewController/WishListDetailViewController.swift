@@ -47,4 +47,28 @@ class WishListDetailViewController: UITableViewController {
         cell.textLabel?.text = "[\(id)] \(title) - \(price) - \(stock) left in stock"
         return cell
     }
+    
+    //editingStyleForRowAt -> .delete / .insert
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+    
+    
+    //canEditRowAt을 통해서도 구현 가능 -> editable할 때, cell은 EditingStyle.delete를 세팅받음
+    //52-54 지우고 적음
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    //commit editingStyle
+    //삭제한 뒤에 삭제한 내역을 다시 저장해주는 로직 필요
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            savedWishList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
+    }
 }

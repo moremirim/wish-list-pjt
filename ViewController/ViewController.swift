@@ -23,11 +23,11 @@ class ViewController: UIViewController {
                 self.thumbnailImageView.image = nil
                 self.titleLabel.text = randomProduct.title
                 self.descriptionLabel.text = randomProduct.description
-                self.priceLabel.text = "\(randomProduct.price)"
-                self.stockLabel.text = "\(randomProduct.stock)"
+                self.priceLabel.text = "\(randomProduct.price) $"
+                self.stockLabel.text = "\(randomProduct.stock) left in stock."
             }
             
-            DispatchQueue.global().async { [weak self] in
+            DispatchQueue.global(qos: .background).async { [weak self] in
                 if let data = try? Data(contentsOf: randomProduct.thumbnail), let image = UIImage(data: data) {
                     DispatchQueue.main.async { self?.thumbnailImageView.image = image }
                 }
