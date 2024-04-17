@@ -153,6 +153,17 @@
                             <outlet property="delegate" destination="RQZ-E8-xIP" id="H2J-Fr-1iO"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="전체삭제" id="3W7-zh-9YL">
+                            <connections>
+                                <action selector="tappedDeleteAllButton:" destination="RQZ-E8-xIP" id="fm9-fr-VLI"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="deleteAllButton" destination="3W7-zh-9YL" id="kjj-81-q98"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRM-h2-84c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

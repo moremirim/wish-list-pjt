@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     }
     
-    //랜덤 상품의 상품 정보 가져오기
+    // MARK: - 랜덤 상품의 상품 정보 가져오기
     private var randomProduct: RemoteProduct? = nil {
         didSet {
             guard let randomProduct = self.randomProduct else {
