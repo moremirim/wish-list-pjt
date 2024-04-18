@@ -14,5 +14,6 @@ struct RemoteProduct: Decodable {
     let price: Double
     let stock: Int64
     let thumbnail: URL
+    let images: Array<URL>
 }
 

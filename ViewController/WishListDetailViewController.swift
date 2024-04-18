@@ -72,7 +72,7 @@ class WishListDetailViewController: UITableViewController {
         
         if editingStyle == .delete {
             tableView.beginUpdates()
-            //코어데이터 자체에서 삭제해준 뒤에 배열에서 삭제. 인덱스의 꼬임 방지!
+            //코어데이터 자체에서 삭제해준 뒤에 배열 및 테이블 뷰에서 삭제. 인덱스의 꼬임 방지!
             persistentContainer?.viewContext.delete(selectedProduct)
             savedWishList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -81,7 +81,7 @@ class WishListDetailViewController: UITableViewController {
             let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
             appDelegate.saveContext()
             
-        }
+            }
     }
     
     //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

@@ -3,7 +3,8 @@
 //  wish-list-draft
 //
 //  Created by 박미림 on 4/14/24.
-//
+
+//I need to merge it with main branch before submission.
 
 import UIKit
 import CoreData
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var stockLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
